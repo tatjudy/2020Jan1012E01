@@ -55,11 +55,13 @@ namespace Pi
                     {
                         mid = num3;
                         low = num2;
+                        //codeblock 4T dies at the end of its code block
                     }// goes to Writeline at end of nested if
                     else
                     {
                         mid = num2;
                         low = num3;
+
                     }// goes to Writeline at end of nested if
                 }
             }// End of nested if
