@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BranchIf_MarinerStars", "Br
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogicalConditions", "LogicalConditions\LogicalConditions.csproj", "{605E7AA6-FDB2-4017-B4C5-0B61E621EEE2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CaseDecision", "CaseDecision\CaseDecision.csproj", "{95FABAA4-DB62-4B1E-953E-1F683591FAC0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{605E7AA6-FDB2-4017-B4C5-0B61E621EEE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{605E7AA6-FDB2-4017-B4C5-0B61E621EEE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{605E7AA6-FDB2-4017-B4C5-0B61E621EEE2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{95FABAA4-DB62-4B1E-953E-1F683591FAC0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95FABAA4-DB62-4B1E-953E-1F683591FAC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95FABAA4-DB62-4B1E-953E-1F683591FAC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95FABAA4-DB62-4B1E-953E-1F683591FAC0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
