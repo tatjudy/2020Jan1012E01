@@ -24,7 +24,7 @@ namespace MenuLoop
                 //prompts
                 Console.WriteLine("Select a option from the following menu:");
                 Console.WriteLine("A) Play Even or Odds");
-                Console.WriteLine("B) Do case B");
+                Console.WriteLine("B) Heads or Tails");
                 Console.WriteLine("C) Do case C");
                 Console.WriteLine("X) Exit\n");
                 Console.Write("Entry your menu option:\t");
@@ -35,27 +35,20 @@ namespace MenuLoop
                     case "A":
                         {
                             Even_Or_Odds();
-                            break;
+                            break; //the break is part of the case NOT the method
                         }
                     case "B":
                         {
-                            //place the Heads or Tails game in this case
-                            //validate that an H or T was entered, if not repeat query for input
-
-                            //Console.WriteLine($"You entered the menu option  of B.\n\n");
-
                             //Create a method that holds the actual code for this case
-                            //The B case will CALL the method to execute
-                            //This method is called the calling statement
-                            //Calling the method requires your code to use the method name
-                            //your program will break to the requested method
-                            //When the method has finished, your program will return to the next executable statement after the method call
+                            //the B case will CALL the method to execute
+                            //this action is referred to as the calling statement
+                            //calling requires your code to use the method name
+                            //your program will branch to the requested method
+                            //when the method has finished, your program will return
+                            //    to the next executable statement AFTER the method call.
 
-                            Heads_Or_Tails_Game();
-
+                            Heads_Or_Tails_Game(); //calling statement
                             break;
-
-
                         }
                     case "C":
                         {
@@ -66,7 +59,22 @@ namespace MenuLoop
                             //after the loop display your integer number and its sum of squares
                             // entered 4
                             //loop 4 times  1) 1* 1 2) 2* 2 3) 3 * 3 4) 4 * 4 final total = 30
-                            Console.WriteLine($"You entered the menu option  of C.\n\n");
+                            //Create a shared input method to obtain an integer value
+
+                            int number = GetIntegerInput("Enter a number greater than 0:");
+
+                            if (number < 1)
+                            {
+                                Console.WriteLine($"(number) is not greater than 0. Unable to do sum of squares.");
+                            }
+
+                            else
+                            {
+                                int sumofsquares = 0;
+                                sumofsquares = SumOfSquares(number);
+                                Console.WriteLine($"(sumofsquares) is the sum of squares for (number)");
+                            }
+
                             break;
                         }
                     case "X":
@@ -83,59 +91,84 @@ namespace MenuLoop
                 }
             } while (menuOption.ToUpper() != "X");
             Console.ReadKey();
-        }//eom
+        }//eom Main
 
-
-        //the syntax for a method requires accesstype returndatatype MethodName ([list of parameters])
-        // {
+        //the syntax for a method requires
+        //  Method Header
+        //  accesstype returndatatype MethodName([list of parameters])
+        //  {
         //      your method code
-        // }
+        //  } //eom
 
-        //accesstype: public or private
-        //            protected, internal, have a static reference,
+        //accesstype:   public or private
+        //              protected, internal, have static reference
 
-        // returndatatype: if you are returning nothing, use the key word void
-        //                 otherwise, return a single value such as int, double, decimal, DateTime, etc.
+        //returndatatype:  if you are returning nothing use the key word void
+        //                 Otherwise, return a single value such as int, double, decimal, DateTime, etc.
 
-        //MethodName: continous string of characters which will be used within your program code to reference this coding block
-        //            it is best to use a meaningful name
-        // [list of parameters] this is a set of local variables that will be used to recieve values from the calling statement
-        // a parameter is a set of datatype variablename
-        //parameters are separated by using a comma
+        //MethodName:  continuous string of characters which will be used within
+        //                  your program code to reference this coding block
+        //             it is best to use a meaningful name
 
-        static public void Heads_Or_Tails_Game()//posttest
+        //[list of parameters]  this is a set of local variables that will be used
+        //                         to receive values from the calling statement
+        //                      a parameter is a set of datatype variablename
+        //                      parameters are separated by using a comma ,
+
+        static public void Heads_Or_Tails_Game()
         {
             string inputString = "";
+            int headcount = 0;
+            int tailcount = 0;
             do
             {
+
                 //validation
                 do
                 {
-                    Console.WriteLine("Enter a H (heades) or T (Tails) or Q (Quit)");
+                    Console.Write("Enter a H (heads) or T (tails) or Q (quit)");
                     inputString = Console.ReadLine();
                 } while (!inputString.ToUpper().Equals("H") &&
-                       !inputString.ToUpper().Equals("T") &&
-                       !inputString.ToUpper().Equals("Q")
-                );
+                        !inputString.ToUpper().Equals("T") &&
+                        !inputString.ToUpper().Equals("Q"));
 
-                if (inputString.ToUpper().Equals("H")) ||
-                        inputString.ToUpper().Equals("T");)
+                if (inputString.ToUpper().Equals("H") ||
+                        inputString.ToUpper().Equals("T"))
                 {
                     //heads or tails
-                    if (inputString)
+                    if (inputString.ToUpper().Equals("H"))
                     {
-
+                        headcount++;
+                        Console.WriteLine($"\n {inputString.ToUpper()} is heads");
                     }
-                };
+                    else
+                    {
+                        tailcount++;
+                        Console.WriteLine($"\n {inputString.ToUpper()} is tails");
+                    }
+                }
                 else
                 {
-                    //quite
-                    Console.WriteLine("\n\nThank you. Hope you enjoyed the game.\n\n");
+                    if (headcount > tailcount)
+                    {
+                        Console.WriteLine($"Heads wins over Tails: {headcount} to {tailcount}");
+                    }
+                    else if (headcount < tailcount)
+                    {
+                        Console.WriteLine($"Tails wins over Heads: {tailcount} to {headcount}");
+                    }
+                    else
+                    {
+                        Console.WriteLine($"Heads ties Tails: {headcount} to {tailcount}");
+                    }
+                    //quit
+                    Console.WriteLine("\n\nThank you. Hope you enjoy the game.\n");
                 }
+
             } while (!inputString.ToUpper().Equals("Q"));
         }//eom Heads_Or_Tails_Game
 
-        static public void Even_Or_Odds()//pretest
+        static public void Even_Or_Odds()//subroutine
         {
             int number = -1;
             string inputString = "";
@@ -150,18 +183,8 @@ namespace MenuLoop
 
                 //condition flag
                 //NOTE: it MUST be reset on EACH pass of the OUTER loop
-                bool validFlag = false;
-                do
-                {
-                    Console.Write("Enter a positive whole number OR enter 0 to quit.");
-                    inputString = Console.ReadLine();
-                    //need a test to appropriately set your loop exit test
-                    if (int.TryParse(inputString, out number))
-                    {
-                        //set the flag to an appropriate value to work with your logic
-                        validFlag = true;
-                    }
-                } while (validFlag == false);
+                number = GetIntegerInput("Enter a positive whole number OR enter 0 to quit.");
+
 
                 if (number > 0)
                 {
@@ -188,5 +211,45 @@ namespace MenuLoop
             }//eol while
 
         }//eom Even_Or_Odds
+
+        static public int SumOfSquares(int seednumber) //function
+        {
+            //the sum of squares
+            //enter postive integer number (validate)
+            //loop n times where n is the integer number (1 to n)
+            //within the loop your calculation is  total += loopnumber * loopnumber
+            //after the loop display your integer number and its sum of squares
+            // entered 4
+            //loop 4 times  1) 1* 1 2) 2* 2 3) 3 * 3 4) 4 * 4 final total = 30
+            //Create a shared input method to obtain an integer value
+
+            int finalsquare = 0;
+            for(int loopcounter = 1; loopcounter <= seednumber; loopcounter ++)
+            {
+                finalsquare += loopcounter * loopcounter;
+            }
+
+            return finalsquare;
+        }
+
+        static public int GetIntegerInput(string promptline)
+        {
+            bool validFlag = false;
+            string inputString = "";
+            int number = 0;
+            do
+            {
+                Console.Write(promptline);
+                inputString = Console.ReadLine();
+                if (int.TryParse(inputString, out number))
+                {
+                    validFlag = true;
+                }
+            } while (validFlag == false);
+            //If your method indicates that a return datatype is specified you must have at least one return statement in your method code
+            return 0;
+        }
+        
+
     }
 }
