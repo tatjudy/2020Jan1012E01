@@ -10,57 +10,57 @@ namespace ForLoop
     {
         static void Main(string[] args)
         {
-            //Sample of pre-test loops
-            //While loop
+            //sample of pre-test loops
+            //while loop
             //for loop
 
-            //code a while loop that breaks the components of a for loop into visible items
-            //counter: This will count the number of times through the loop
-            //While condition: counter is less than my stop value
-            // (stop value is either an upper limit or lower limit)
+            //code a while loop that breaks the components of 
+            //    a for loop into visible individual items
+            //counter: this will count the number of times
+            //         through the loop
+            //while condition: counter is less than my stop value
+            //   (stop value is either an upper limit or lower limit)
 
-            //go through the loop several times
+            //go through the loop 7 times
             //count the number of even numbers, number of odd numbers
-            //after the loop print out the even and odd number totals
-
-            int evenNumber = 0; //If error says unassigned number, make it equal zero
-            int oddNumber = 0;
-            int endPoint = 7; //sentinal value
-            int loopCounter = 1; //to indicate first loop
-
+            //after the loop print out the even and odd number running totals
+            int evenNumbers = 0;
+            int oddNumbers = 0;
             string inputValue;
             int number;
             const int TWO = 2;
 
+            int loopCounter = 1;
             while (loopCounter <= 7)
             {
-                System.Console.Write("Enter a number:\t");
+                Console.Write("Enter a number:\t");
                 inputValue = Console.ReadLine();
                 number = int.Parse(inputValue);
 
                 if ((number % TWO) == 0)
                 {
-                    //evenNumber = evenNumber + 1
-                    evenNumber++; //running total
+                    //evenNumbers = evenNumbers + 1;
+                    evenNumbers++;      //running total
                 }
-
                 else
                 {
-                    //oddNumbers = oddNumber + 1;
-                    oddNumber += 1; //running total
+                    //oddNumbers = oddNumbers + 1;
+                    oddNumbers += 1;    //running total
                 }//eof
+
                 //increment the loop counter
                 loopCounter++;
-            }
+            }//eol  end of loop
 
-            Console.WriteLine($"\nYour even number count is {evenNumber}");
-            Console.WriteLine($"Your odd number count is {oddNumber}\n\n");
+            Console.WriteLine($"\nYour even number count is {evenNumbers}");
+            Console.WriteLine($"Your odd number count is {oddNumbers}\n\n");
+
 
             //for loop
-            //The for loop is a pre-test loop structure
-            evenNumber = 0; //reset totals
-            oddNumber = 0; //reset totals
-            //  initialize          condition           loop increment
+            //the for loop is a pre-test loop structure
+            evenNumbers = 0;    //reset totals
+            oddNumbers = 0;     //reset totals
+            int endPoint = 7;   //Sentinal value
             for (int forCounter = 1; forCounter <= endPoint; forCounter++)
             {
                 Console.Write("Enter a number:\t");
@@ -69,39 +69,20 @@ namespace ForLoop
 
                 if ((number % TWO) == 0)
                 {
-                    //evenNumber = evenNumber + 1
-                    evenNumber++; //running total
+                    //evenNumbers = evenNumbers + 1;
+                    evenNumbers++;      //running total
                 }
-
                 else
                 {
-                    //oddNumbers = oddNumber + 1;
-                    oddNumber += 1; //running total
+                    //oddNumbers = oddNumbers + 1;
+                    oddNumbers += 1;    //running total
                 }//eof
-            }//eol
-            Console.WriteLine($"\nYour even number count is {evenNumber}");
-            Console.WriteLine($"Your odd number count is {oddNumber}\n\n");
+            }//eol end of loop
 
-            if (evenNumber < oddNumber)
-                Console.WriteLine("do this true line of code");
-            else
-                Console.WriteLine("do this false line of code");
-            //eof
-            Console.WriteLine("do this false line of code");
-            Console.WriteLine("do this false line of code");
-            Console.WriteLine("do this false line of code");
-            if (0)
-            {
-                Console.WriteLine("do this true line of code");
-            }
-            else
-            {
-                Console.WriteLine("do this false line of code");
-                //eof
-                Console.WriteLine("do this false line of code");
-                Console.WriteLine("do this false line of code");
-                Console.WriteLine("do this false line of code");
-            }
+            Console.WriteLine($"\nYour even number count is {evenNumbers}");
+            Console.WriteLine($"Your odd number count is {oddNumbers}\n\n");
+
+
         }
     }
 }
