@@ -1,28 +1,35 @@
-﻿using Microsoft.Win32; //required for the OpenFileDialog
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.IO;  //required to do file i/o
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FileIOBrowseDialog
+namespace AbsolutePathName
 {
     class Program
     {
-        //this is required for your code when using OpenFileDialog
-        [STAThread]
+        //[STAThread]
         static void Main(string[] args)
         {
             string Full_Path_File_Name = "";
 
-            //Is there a way to browse for a file
-            //Yes, you can call the OpenFileDialog
-            //this is the dialog open that you see on your system
-            //    when you go browsing for a file within an application
-            OpenFileDialog fd = new OpenFileDialog();
-            fd.ShowDialog();
-            Full_Path_File_Name = fd.FileName;
+
+            //you can prompt for the file name
+
+            //location
+
+            //the file will always be in the same location
+            //setup the path name
+            //I will assume that the require file will always be found at the
+            //  root of the course class repository
+            string FolderPath = @"c:\Users\DWelch\Documents\GitHub\2020Jan1012E01\";
+
+
+            Console.Write("Enter the file name ex myfile.txt\t");
+            string FileName = Console.ReadLine();
+
+            Full_Path_File_Name = FolderPath + FileName;
 
             //setup for reading a file
             //a string variable is required to receive the data
@@ -82,6 +89,7 @@ namespace FileIOBrowseDialog
                 // .Message holds the error that occured during the processing
                 //     of the code in your try{....}
                 Console.WriteLine($"Error: {ex.Message}");
+
             }
             finally
             {

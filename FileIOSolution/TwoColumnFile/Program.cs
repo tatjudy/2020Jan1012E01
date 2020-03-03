@@ -6,6 +6,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
+
 namespace FileIOBrowseDialog
 {
     class Program
@@ -71,7 +73,20 @@ namespace FileIOBrowseDialog
                 while (readValue != null)  //stop when you reach the end of the file
                 {
                     counter++;
-                    Console.WriteLine($"File line {counter} has a value of {readValue}\n");
+                    //Console.WriteLine($"File line {counter} has a value of {readValue}\n");
+                    //You must know how the individual values are separated on the file line (record)
+                    //Many times this is done using a comma
+                    //Files that use a comma are generally referred to as comma separate values (csv)
+                    //Each record that is read is processed through a loop to extract each value
+                    //A system method exists which allows one to split the values apart
+                    //This method is .Split('delimiter')
+                    //The delimiter is the character used to separate the valueson the file record
+                    int columncounter = 0;
+                    foreach (var columnitem in readValue.Split(','))
+                    {
+                        columncounter++;
+                        Console.WriteLine($"Row {counter} Column {columncounter} has a value of {columnitem}");
+                    }
 
                     //get the next line
                     readValue = reader.ReadLine();
@@ -92,6 +107,16 @@ namespace FileIOBrowseDialog
 
 
             Console.ReadKey();
+        }
+    }
+
+    internal class OpenFileDialog
+    {
+        public string FileName { get; internal set; }
+
+        internal void ShowDialog()
+        {
+            throw new NotImplementedException();
         }
     }
 }
