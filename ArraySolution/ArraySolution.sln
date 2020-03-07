@@ -5,6 +5,10 @@ VisualStudioVersion = 16.0.29806.167
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoadArray", "LoadArray\LoadArray.csproj", "{403AB2DB-F055-4436-A388-9FAB5F8B2DCA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SequentialSearchFind", "SequentialSearchFind\SequentialSearchFind.csproj", "{E4B4008B-BE38-4CF3-9C45-42CD0A38E440}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Question1", "Question1\Question1.csproj", "{B26AC56C-9EEC-466A-B4CB-76ADBC1D4869}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{403AB2DB-F055-4436-A388-9FAB5F8B2DCA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{403AB2DB-F055-4436-A388-9FAB5F8B2DCA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{403AB2DB-F055-4436-A388-9FAB5F8B2DCA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E4B4008B-BE38-4CF3-9C45-42CD0A38E440}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E4B4008B-BE38-4CF3-9C45-42CD0A38E440}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E4B4008B-BE38-4CF3-9C45-42CD0A38E440}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E4B4008B-BE38-4CF3-9C45-42CD0A38E440}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B26AC56C-9EEC-466A-B4CB-76ADBC1D4869}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B26AC56C-9EEC-466A-B4CB-76ADBC1D4869}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B26AC56C-9EEC-466A-B4CB-76ADBC1D4869}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B26AC56C-9EEC-466A-B4CB-76ADBC1D4869}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
