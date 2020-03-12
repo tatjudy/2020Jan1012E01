@@ -8,6 +8,9 @@ namespace RandomGen
 {
     class Program
     {
+        //if declared outside of a method add the keyword static in front of your declaration
+        //if declared outside of a method BUT within the class THEN the variable is known to ALL methods WITHOUT having to pass the value as a parameter
+        //static Random rnd = new Random()
         static void Main(string[] args)
         {
             //Random is a datatype of class (object)
@@ -51,6 +54,11 @@ namespace RandomGen
             }
             Console.WriteLine($"highest value is {highest}");
             Console.WriteLine($"lowest value is {lowest}");
+        }
+
+        static void SomeMethod (Random random)
+        {
+
         }
     }
 }

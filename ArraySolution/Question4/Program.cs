@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 using System.IO;
 using Microsoft.Win32;
 
-namespace Question1
+
+namespace Question4
 {
     class Program
     {
@@ -23,20 +24,26 @@ namespace Question1
             }
             if (logicalsize > 0)
             {
+                string name = "bob";
                 Console.WriteLine($"Quiz Total: {logicalsize}");
                 Console.WriteLine($"Student         Mark");
-                Console.WriteLine($"");
+                Console.WriteLine("_______         ____");
+                int index = 0;
+                while ( index < logicalsize)
+                {
+                    Console.Write($"{name,-7}");
+                    Console.WriteLine($"{driverArray[index]}".PadLeft(13));
+                    index++;
+                }
+                FindHighAndLow(driverArray, logicalsize);
                 Console.WriteLine($"The average of the {logicalsize} numbers is {(double)sum / (double)logicalsize}.");
-
-
-
-
             }
             else
             {
                 Console.WriteLine($"You have no numbers to calculate an average.");
             }
         }
+
         static int ReadAndLoadArray(int[] myArray, int physicalsize)
         {
             {
@@ -97,6 +104,32 @@ namespace Question1
 
                 return logicalsize;
             }
+        }
+        static void FindHighAndLow(int[] myArray, int physicalsize)
+        {
+
+
+            //what is the highest random number generated and the lowest random number generator
+
+            int highest = 0;
+            int lowest = 100;
+
+            int loopCounter = 0;
+            while (loopCounter < 10)
+            {
+                if (highest < myArray[loopCounter])
+                {
+                    highest = myArray[loopCounter]; //New high number
+                }
+
+                if (lowest > myArray[loopCounter])
+                {
+                    lowest = myArray[loopCounter]; //New high number
+                }
+                loopCounter++;
+            }
+            Console.WriteLine($"highest mark is {highest}");
+            Console.WriteLine($"lowest mark is {lowest}");
         }
     }
 }
