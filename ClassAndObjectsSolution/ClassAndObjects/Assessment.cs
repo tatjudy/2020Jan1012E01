@@ -50,5 +50,36 @@ namespace ClassAndObjects
             //since Properties do NOT have a parameter list AND are associated with a single place of data, the data within the property is accessed using the keyword --> value
             set { _Comment = string.IsNullOrEmpty(value) ? null : value; }
         }
+
+        //if your class has NO constructor, the system will create an instance AND initialize all your data storage areas (data member or auto properties) to their basic system defaults
+
+        //WARNING
+        //IF you code one constructor, then you are responsible for ANY and ALL constructors. The system will not do anything on your behalf
+
+        //Constructors
+        //Constructors are used to initialize the beginning state of an instance
+
+        //"Default" Constructor
+        //Characteristic: no parameters
+        //Coding block may or may not assign literal values to your data storage
+        public Assessment()
+        {
+            //optionally assign a literal value to adata storage area
+            //notice: good coding practice is to use Properties and NOT directly the data member;
+            //Mark = 0.0;
+            //Comment = "no comment";
+        }
+
+        //"Greedy" Constructor
+        //characteristic: one parameter for each data storage item in the class
+
+        public Assessment(string firstname, string lastname, string assessmentname, double mark, string comment)
+        {
+            FirstName = firstname;
+            LastName = lastname;
+            AssessmentName = assessmentname;
+            Mark = mark;
+            Comment = comment;
+        }
     }
 }
