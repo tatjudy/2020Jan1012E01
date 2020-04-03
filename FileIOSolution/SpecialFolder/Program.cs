@@ -28,8 +28,8 @@ namespace SpecialFolder
 
             //Now, you must add any additional path structure to get to the specific
             //   folder within the special folder
-            string FolderPath = specialpathname + @"\GitHub\2020Jan1012E01\";
-
+            string FolderPath = specialpathname + @"\GitHub\2020Jan1012E01\files\";
+            
             //I will assume that the require file will always be found at the
             //  root of the course class repository
             Console.Write("Enter the file name ex myfile.txt\t");
