@@ -10,21 +10,21 @@ namespace Behaviors
     {
         static void Main(string[] args)
         {
-            Window[] myWindows = new Window[10];
-            Window theInstance = null;
+            Opening[] myWindows = new Opening[10];
+            Opening theInstance = null;
             int logicalsize = 0;
             try
             {
-                theInstance = new Window(); //default constructor
+                theInstance = new Opening(); //default constructor
                 theInstance.Model = "2 pane gas filled";
                 myWindows[logicalsize] = theInstance;
                 logicalsize++;
 
-                theInstance = new Window("single pane plexi-glass", 2.1, 1.0);
+                theInstance = new Opening("single pane plexi-glass", 2.1, 1.0);
                 myWindows[logicalsize] = theInstance;
                 logicalsize++;
 
-                theInstance = new Window(); //default constructor
+                theInstance = new Opening(); //default constructor
                 theInstance.Model = "2 pane tinted";
                 theInstance.Height = 1.75;
                 theInstance.Width = 3.2;
@@ -45,7 +45,7 @@ namespace Behaviors
                     
                 }
 
-                theInstance = new Window(); //bad width, looking for an exception
+                theInstance = new Opening(); //bad width, looking for an exception
                 theInstance.Model = "bad width";
                 theInstance.Height = 1.75;
                 theInstance.Width = -3.2; //Error

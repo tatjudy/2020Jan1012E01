@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Behaviors
 {
-    public class Window
+    public class Opening
     {
         private double _Width;
         public string Model { get; set; }
@@ -26,13 +26,13 @@ namespace Behaviors
                 }
             }
         }
-        public Window()
+        public Opening()
         {
             Height = 1.25;
             Width = 1.25;
         }
 
-        public Window(string model, double height, double width)
+        public Opening(string model, double height, double width)
         {
             Model = model;
             Height = height;

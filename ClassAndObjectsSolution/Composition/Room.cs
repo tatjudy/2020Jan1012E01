@@ -1,4 +1,4 @@
-﻿using Behaviours; //namespace to Opening class
+﻿using Behaviors; //namespace to Opening class
 using System;
 using System.Collections.Generic;
 using System.Linq;
